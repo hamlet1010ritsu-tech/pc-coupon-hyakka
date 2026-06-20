@@ -1,151 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  /* ── トップページ固有 ── */
+  .promise { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; margin-bottom: 28px; display: flex; gap: 20px; flex-wrap: wrap; box-shadow: var(--shadow-sm); }
+  .promise-item { flex: 1; min-width: 180px; }
+  .pi-title { font-size: 13px; font-weight: 700; margin: 0 0 4px; display: flex; align-items: center; gap: 6px; }
+  .promise-item p { font-size: 12px; color: var(--text-2); margin: 0; line-height: 1.6; }
+  .maker-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .maker-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; text-decoration: none; display: block; transition: box-shadow 0.15s, border-color 0.15s, transform 0.05s; box-shadow: var(--shadow-sm); }
+  .maker-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-2); }
+  .maker-card:active { transform: scale(0.995); }
+  .maker-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 12px; }
+  .maker-name { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .maker-logo { width: 40px; height: 40px; border-radius: var(--r); background: var(--blue-bg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--blue-text); }
+  .maker-arrow { font-size: 13px; color: var(--blue); white-space: nowrap; font-weight: 500; }
+  .maker-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tag { font-size: 11px; padding: 2px 10px; border-radius: 999px; background: var(--bg-2); color: var(--text-3); }
+  .tag.hot { background: var(--blue-bg); color: var(--blue-text); font-weight: 500; }
+  .top-coupon { display: flex; align-items: center; gap: 10px; background: var(--bg-2); border-radius: var(--r); padding: 10px 14px; }
+  .tc-icon { font-size: 15px; }
+  .tc-text { font-size: 13px; color: var(--text-2); }
+  .tc-text strong { font-weight: 700; color: var(--text); }
+  .tc-date { font-size: 11px; color: var(--text-3); margin-left: auto; white-space: nowrap; }
+  .other { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; margin-bottom: 28px; box-shadow: var(--shadow-sm); }
+  .other h2 { font-size: 14px; margin-bottom: 8px; }
+  .other p { font-size: 13px; color: var(--text-2); margin: 0; }
+  .guide-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .guide-card { display: flex; align-items: center; gap: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; text-decoration: none; transition: box-shadow 0.15s, transform 0.05s; box-shadow: var(--shadow-sm); }
+  .guide-card:hover { box-shadow: var(--shadow-md); }
+  .guide-card:active { transform: scale(0.995); }
+  .guide-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--r); background: var(--blue-bg); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .guide-body { flex: 1; }
+  .guide-title { font-size: 14px; font-weight: 700; color: var(--text); margin: 0 0 3px; }
+  .guide-desc { font-size: 12px; color: var(--text-2); margin: 0; line-height: 1.5; }
+  .guide-arrow { font-size: 13px; color: var(--blue); white-space: nowrap; font-weight: 500; }
+  </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>パソコンメーカー クーポン・割引コード まとめ【2026年6月最新】| PCクーポン百科</title>
 <meta name="description" content="Lenovo・HP・NECなど大手パソコンメーカーの最新クーポン・割引コードをまとめています。毎日確認し、失効したクーポンは即削除。生きているクーポンだけを掲載しています。">
-<style>
-  :root {
-    --bg: #ffffff;
-    --bg-secondary: #f6f5f1;
-    --bg-tertiary: #efede7;
-    --text: #1a1a18;
-    --text-secondary: #5f5e5a;
-    --text-tertiary: #8a8980;
-    --border: rgba(0,0,0,0.12);
-    --border-strong: rgba(0,0,0,0.22);
-    --info-bg: #e6f1fb;
-    --info-text: #0c447c;
-    --info-border: #378add;
-    --success-bg: #e1f5ee;
-    --success-text: #085041;
-    --warning-bg: #faeeda;
-    --warning-text: #633806;
-    --radius: 8px;
-    --radius-lg: 12px;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1f1e1c;
-      --bg-secondary: #2a2926;
-      --bg-tertiary: #323128;
-      --text: #ededea;
-      --text-secondary: #b4b2a9;
-      --text-tertiary: #88877f;
-      --border: rgba(255,255,255,0.14);
-      --border-strong: rgba(255,255,255,0.26);
-      --info-bg: #0c447c;
-      --info-text: #b5d4f4;
-      --info-border: #378add;
-      --success-bg: #085041;
-      --success-text: #9fe1cb;
-      --warning-bg: #633806;
-      --warning-text: #fac775;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: var(--sans);
-    background: var(--bg-tertiary);
-    color: var(--text);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
-  a { color: inherit; }
-
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 0.5px solid var(--border);
-    padding-bottom: 12px; margin-bottom: 18px;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand-icon {
-    width: 36px; height: 36px; border-radius: var(--radius);
-    background: var(--bg-secondary); display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-  }
-  .brand-name { font-size: 15px; font-weight: 500; }
-  .nav { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
-  .nav a { text-decoration: none; }
-  .nav a:hover { color: var(--text); }
-
-  h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; line-height: 1.4; }
-  h2 { font-size: 18px; font-weight: 500; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
-  .lead { font-size: 14px; color: var(--text-secondary); margin: 0 0 16px; }
-
-  .promise {
-    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
-    padding: 16px 18px; margin-bottom: 28px; display: flex; gap: 20px; flex-wrap: wrap;
-  }
-  .promise-item { flex: 1; min-width: 180px; }
-  .promise-item .pi-title { font-size: 14px; font-weight: 500; margin: 0 0 4px; display: flex; align-items: center; gap: 6px; }
-  .promise-item p { font-size: 12px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
-
-  .freshness {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--success-bg); color: var(--success-text);
-    font-size: 12px; padding: 5px 12px; border-radius: var(--radius); margin-bottom: 28px;
-  }
-
-  .maker-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-  .maker-card {
-    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
-    padding: 18px 20px; text-decoration: none; display: block;
-    transition: border-color 0.15s, transform 0.05s;
-  }
-  .maker-card:hover { border-color: var(--border-strong); }
-  .maker-card:active { transform: scale(0.995); }
-  .maker-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 12px; }
-  .maker-name { font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
-  .maker-logo {
-    width: 40px; height: 40px; border-radius: var(--radius); background: var(--bg-secondary);
-    display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; color: var(--text-secondary);
-  }
-  .maker-arrow { font-size: 13px; color: var(--info-text); white-space: nowrap; }
-  .maker-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-  .tag { font-size: 11px; padding: 3px 10px; border-radius: var(--radius); background: var(--bg-secondary); color: var(--text-secondary); }
-  .tag.hot { background: var(--info-bg); color: var(--info-text); }
-  .top-coupon {
-    display: flex; align-items: center; gap: 10px; background: var(--bg-secondary);
-    border-radius: var(--radius); padding: 10px 14px;
-  }
-  .top-coupon .tc-icon { font-size: 16px; }
-  .top-coupon .tc-text { font-size: 13px; }
-  .top-coupon .tc-text strong { font-weight: 500; }
-  .top-coupon .tc-date { font-size: 11px; color: var(--text-tertiary); margin-left: auto; white-space: nowrap; }
-
-  .other { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; margin-bottom: 28px; }
-  .other h2 { font-size: 15px; margin-bottom: 10px; }
-  .other p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.7; }
-
-  .guide-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .guide-card {
-    display: flex; align-items: center; gap: 14px; background: var(--bg);
-    border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px;
-    text-decoration: none; transition: border-color 0.15s, transform 0.05s;
-  }
-  .guide-card:hover { border-color: var(--border-strong); }
-  .guide-card:active { transform: scale(0.995); }
-  .guide-icon {
-    width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--radius);
-    background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-size: 22px;
-  }
-  .guide-body { flex: 1; }
-  .guide-title { font-size: 15px; font-weight: 500; color: var(--text); margin: 0 0 3px; }
-  .guide-desc { font-size: 12px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
-  .guide-arrow { font-size: 13px; color: var(--info-text); white-space: nowrap; }
-
-  .disclaimer { background: var(--warning-bg); border-radius: var(--radius); padding: 14px 16px; }
-  .disclaimer p { font-size: 12px; line-height: 1.7; color: var(--warning-text); margin: 0; }
-
-  footer { margin-top: 32px; padding-top: 16px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-tertiary); }
-  footer a { text-decoration: none; }
-</style>
 <!-- SEO_INJECT -->
   <link rel="canonical" href="https://SITE_URL/">
   <meta name="robots" content="index, follow">
