@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | PCクーポン百科</title>
+<meta name="description" content="PCクーポン百科へのお問い合わせはこちらから。クーポン情報の誤りのご指摘、ご要望などお気軽にご連絡ください。">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f6f5f1;
+    --bg-tertiary: #efede7;
+    --text: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #8a8980;
+    --border: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.22);
+    --info-bg: #e6f1fb;
+    --info-text: #0c447c;
+    --info-border: #378add;
+    --success-bg: #e1f5ee;
+    --success-text: #085041;
+    --warning-bg: #faeeda;
+    --warning-text: #633806;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1f1e1c;
+      --bg-secondary: #2a2926;
+      --bg-tertiary: #323128;
+      --text: #ededea;
+      --text-secondary: #b4b2a9;
+      --text-tertiary: #88877f;
+      --border: rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.26);
+      --info-bg: #0c447c;
+      --info-text: #b5d4f4;
+      --info-border: #378add;
+      --success-bg: #085041;
+      --success-text: #9fe1cb;
+      --warning-bg: #633806;
+      --warning-text: #fac775;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--sans); background: var(--bg-tertiary);
+    color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  a { color: inherit; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 0.5px solid var(--border); padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand-icon {
+    width: 36px; height: 36px; border-radius: var(--radius); background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .brand-name { font-size: 15px; font-weight: 500; }
+  .nav { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--text); }
+  .crumb { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+  .crumb a { text-decoration: none; }
+  h1 { font-size: 22px; font-weight: 500; margin: 0 0 6px; line-height: 1.4; }
+  .lead { font-size: 14px; color: var(--text-secondary); margin: 0 0 24px; }
+
+  .form-card {
+    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+    padding: 22px 22px 24px; margin-bottom: 20px;
+  }
+  .field { margin-bottom: 18px; }
+  .field:last-child { margin-bottom: 0; }
+  label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 7px; }
+  label .req { color: #c0392b; font-size: 11px; margin-left: 6px; }
+  label .opt { color: var(--text-tertiary); font-size: 11px; margin-left: 6px; font-weight: 400; }
+  input, select, textarea {
+    width: 100%; font-family: var(--sans); font-size: 14px; color: var(--text);
+    background: var(--bg-secondary); border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius); padding: 11px 13px; line-height: 1.5;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--info-border); outline-offset: -1px; }
+  textarea { resize: vertical; min-height: 130px; }
+
+  .submit-btn {
+    font-family: var(--sans); font-size: 15px; font-weight: 500; cursor: pointer;
+    background: var(--info-border); color: #fff; border: none;
+    border-radius: var(--radius); padding: 13px 28px; transition: opacity 0.15s, transform 0.05s;
+  }
+  .submit-btn:hover { opacity: 0.9; }
+  .submit-btn:active { transform: scale(0.98); }
+
+  .privacy-agree { font-size: 12px; color: var(--text-tertiary); margin-top: 14px; }
+  .privacy-agree a { text-decoration: underline; }
+
+  .notice {
+    background: var(--info-bg); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 20px;
+  }
+  .notice p { font-size: 13px; color: var(--info-text); margin: 0; line-height: 1.7; }
+
+  .setup-note {
+    background: var(--warning-bg); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px;
+  }
+  .setup-note p { font-size: 12px; color: var(--warning-text); margin: 0; line-height: 1.7; }
+  .setup-note code { font-family: var(--mono); font-size: 11px; background: rgba(0,0,0,0.08); padding: 1px 5px; border-radius: 4px; }
+
+  footer { margin-top: 32px; padding-top: 16px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-tertiary); }
+  footer a { text-decoration: none; }
+</style>
+<!-- SEO_INJECT -->
+  <link rel="canonical" href="https://SITE_URL/contact.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PCクーポン百科">
+  <meta property="og:title" content="お問い合わせ | PCクーポン百科">
+  <meta property="og:description" content="PCクーポン百科へのお問い合わせはこちらから。クーポン情報の誤りのご指摘、ご要望などお気軽にご連絡ください。">
+  <meta property="og:url" content="https://SITE_URL/contact.html">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="お問い合わせ | PCクーポン百科">
+  <meta name="twitter:description" content="PCクーポン百科へのお問い合わせはこちらから。クーポン情報の誤りのご指摘、ご要望などお気軽にご連絡ください。">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://SITE_URL/#organization",
+      "name": "PCクーポン百科",
+      "url": "https://SITE_URL/",
+      "description": "大手パソコンメーカーのクーポン・割引コードを毎日確認して掲載するサイト"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://SITE_URL/#website",
+      "url": "https://SITE_URL/",
+      "name": "PCクーポン百科",
+      "publisher": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://SITE_URL/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "お問い合わせ"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <!-- SEO_INJECT -->
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <div class="brand-icon">💻</div>
+      <span class="brand-name">PCクーポン百科</span>
+    </a>
+    <nav class="nav">
+      <a href="lenovo-coupon.html">Lenovo</a><a href="hp-coupon.html">HP</a><a href="nec-coupon.html">NEC</a><a href="index.html">一覧</a>
+    </nav>
+  </div>
+
+  <div class="crumb"><a href="index.html">ホーム</a> / お問い合わせ</div>
+  <h1>お問い合わせ</h1>
+  <p class="lead">クーポン情報の誤りのご指摘、掲載のご要望、その他のお問い合わせは以下のフォームよりご連絡ください。</p>
+
+  <div class="notice">
+    <p>クーポン情報の誤りや期限切れにお気づきの場合は、対象メーカー名とクーポン内容をお書き添えいただけますと、迅速に確認・対応いたします。</p>
+  </div>
+
+  <form class="form-card" action="https://formspree.io/f/your-form-id" method="POST">
+    <div class="field">
+      <label for="name">お名前<span class="opt">任意</span></label>
+      <input type="text" id="name" name="name" placeholder="例：山田 太郎">
+    </div>
+    <div class="field">
+      <label for="email">メールアドレス<span class="req">必須</span></label>
+      <input type="email" id="email" name="email" placeholder="例：example@mail.com" required>
+    </div>
+    <div class="field">
+      <label for="subject">お問い合わせ種別<span class="req">必須</span></label>
+      <select id="subject" name="subject" required>
+        <option value="">選択してください</option>
+        <option value="クーポン情報の誤り・期限切れの指摘">クーポン情報の誤り・期限切れの指摘</option>
+        <option value="掲載のご要望">掲載してほしいメーカー・クーポンの要望</option>
+        <option value="提携・取材のご相談">提携・取材のご相談</option>
+        <option value="その他">その他</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+      <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+    </div>
+    <div class="field">
+      <button type="submit" class="submit-btn">送信する</button>
+      <p class="privacy-agree">送信をもって<a href="privacy.html">プライバシーポリシー</a>に同意したものとみなします。</p>
+    </div>
+  </form>
+
+  <div class="setup-note">
+    <p>【設置時の注意：公開前に削除してください】このフォームを実際に動かすには、フォーム送信サービスの登録が必要です。最も簡単なのは <strong>Formspree</strong>（無料枠あり）で、登録後に発行されるフォームIDを、上の <code>action="https://formspree.io/f/your-form-id"</code> の <code>your-form-id</code> 部分に差し替えるだけで、送信内容があなたのメールに届くようになります。他に Google フォームの埋め込みや、レンタルサーバーのメールフォーム機能でも代替できます。</p>
+  </div>
+
+  <footer>
+    <a href="about.html">運営者情報</a> ・ <a href="contact.html">お問い合わせ</a> ・ <a href="privacy.html">プライバシーポリシー</a><br>
+    © 2026 PCクーポン百科. 当サイトはアフィリエイト広告（リンクシェア・ジャパン／バリューコマース等）を利用しています。
+  </footer>
+
+</div>
+</body>
+</html>
