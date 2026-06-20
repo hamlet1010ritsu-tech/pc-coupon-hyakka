@@ -1,150 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  /* ── 買い時ガイド固有 ── */
+  .cal-table { width: 100%; border-collapse: collapse; background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin: 8px 0 20px; box-shadow: var(--shadow-sm); }
+  .cal-table th, .cal-table td { text-align: left; padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .cal-table tr:last-child td { border-bottom: none; }
+  .cal-table th { background: var(--bg-2); font-weight: 700; color: var(--text); font-size: 12px; }
+  .cal-table .month { white-space: nowrap; font-weight: 700; color: var(--text); width: 76px; }
+  .cal-table td { color: var(--text-2); }
+  .level { font-size: 11px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; font-weight: 500; }
+  .level.high { background: var(--green-bg); color: var(--green-text); }
+  .level.mid { background: var(--blue-bg); color: var(--blue-text); }
+  .level.low { background: var(--bg-2); color: var(--text-3); }
+  .season-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+  .season-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .season-title { font-size: 16px; font-weight: 700; color: var(--text); }
+  .season-when { font-size: 11px; color: var(--blue-text); background: var(--blue-bg); padding: 2px 10px; border-radius: 999px; font-weight: 500; }
+  </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>パソコンはいつ買うと安い？2026年のセール時期・買い時カレンダー | PCクーポン百科</title>
 <meta name="description" content="パソコンを安く買える時期を月別カレンダーで解説。決算期・ボーナス商戦・新生活セール・型落ちのタイミングまで、買い時を逃さないコツを紹介します。クーポン併用でさらにお得に。">
-<style>
-  :root {
-    --bg: #ffffff;
-    --bg-secondary: #f6f5f1;
-    --bg-tertiary: #efede7;
-    --text: #1a1a18;
-    --text-secondary: #5f5e5a;
-    --text-tertiary: #8a8980;
-    --border: rgba(0,0,0,0.12);
-    --border-strong: rgba(0,0,0,0.22);
-    --info-bg: #e6f1fb;
-    --info-text: #0c447c;
-    --info-border: #378add;
-    --success-bg: #e1f5ee;
-    --success-text: #085041;
-    --warning-bg: #faeeda;
-    --warning-text: #633806;
-    --radius: 8px;
-    --radius-lg: 12px;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1f1e1c;
-      --bg-secondary: #2a2926;
-      --bg-tertiary: #323128;
-      --text: #ededea;
-      --text-secondary: #b4b2a9;
-      --text-tertiary: #88877f;
-      --border: rgba(255,255,255,0.14);
-      --border-strong: rgba(255,255,255,0.26);
-      --info-bg: #0c447c;
-      --info-text: #b5d4f4;
-      --info-border: #378add;
-      --success-bg: #085041;
-      --success-text: #9fe1cb;
-      --warning-bg: #633806;
-      --warning-text: #fac775;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; font-family: var(--sans); background: var(--bg-tertiary);
-    color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
-  a { color: inherit; }
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 0.5px solid var(--border); padding-bottom: 12px; margin-bottom: 18px;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand-icon {
-    width: 36px; height: 36px; border-radius: var(--radius); background: var(--bg-secondary);
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-  }
-  .brand-name { font-size: 15px; font-weight: 500; }
-  .nav { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
-  .nav a { text-decoration: none; }
-  .nav a:hover { color: var(--text); }
-  .crumb { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
-  .crumb a { text-decoration: none; }
-
-  h1 { font-size: 24px; font-weight: 500; margin: 0 0 10px; line-height: 1.45; }
-  .updated { font-size: 12px; color: var(--text-tertiary); margin: 0 0 20px; }
-  .lead { font-size: 15px; color: var(--text-secondary); margin: 0 0 24px; }
-
-  .toc {
-    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
-    padding: 16px 20px; margin-bottom: 32px;
-  }
-  .toc-title { font-size: 13px; font-weight: 500; color: var(--text-tertiary); margin-bottom: 10px; }
-  .toc ol { margin: 0; padding-left: 20px; }
-  .toc li { font-size: 14px; margin-bottom: 7px; }
-  .toc li:last-child { margin-bottom: 0; }
-  .toc a { text-decoration: none; color: var(--info-text); }
-  .toc a:hover { text-decoration: underline; }
-
-  h2 { font-size: 19px; font-weight: 500; margin: 40px 0 14px; line-height: 1.4; scroll-margin-top: 16px; }
-  h3 { font-size: 16px; font-weight: 500; margin: 24px 0 10px; }
-  p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; }
-  strong { color: var(--text); font-weight: 500; }
-
-  .cal-table { width: 100%; border-collapse: collapse; background: var(--bg);
-    border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 8px 0 20px; }
-  .cal-table th, .cal-table td { text-align: left; padding: 11px 14px; font-size: 13px; border-bottom: 0.5px solid var(--border); vertical-align: top; }
-  .cal-table tr:last-child td { border-bottom: none; }
-  .cal-table th { background: var(--bg-secondary); font-weight: 500; color: var(--text); }
-  .cal-table .month { white-space: nowrap; font-weight: 500; color: var(--text); width: 76px; }
-  .cal-table td { color: var(--text-secondary); }
-  .level { font-size: 11px; padding: 2px 8px; border-radius: var(--radius); white-space: nowrap; }
-  .level.high { background: var(--success-bg); color: var(--success-text); }
-  .level.mid { background: var(--info-bg); color: var(--info-text); }
-  .level.low { background: var(--bg-secondary); color: var(--text-tertiary); }
-
-  .season-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 16px; }
-  .season-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
-  .season-title { font-size: 17px; font-weight: 500; color: var(--text); }
-  .season-when { font-size: 12px; color: var(--info-text); background: var(--info-bg); padding: 3px 10px; border-radius: var(--radius); }
-
-  .tip { background: var(--info-bg); border-radius: var(--radius); padding: 16px 18px; margin: 28px 0; }
-  .tip p { color: var(--info-text); margin: 0; font-size: 14px; line-height: 1.7; }
-  .tip strong { color: var(--info-text); }
-
-  .reco { display: flex; align-items: center; gap: 12px; margin-top: 14px;
-    background: var(--success-bg); border-radius: var(--radius); padding: 12px 16px; text-decoration: none; transition: opacity 0.15s; }
-  .reco:hover { opacity: 0.85; }
-  .reco-icon { font-size: 18px; }
-  .reco-text { font-size: 13px; color: var(--success-text); line-height: 1.5; }
-  .reco-text strong { color: var(--success-text); font-weight: 600; }
-  .reco-arrow { margin-left: auto; font-size: 13px; color: var(--success-text); white-space: nowrap; font-weight: 500; }
-
-  .checklist { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin: 20px 0; }
-  .checklist-item { display: flex; gap: 10px; margin-bottom: 12px; }
-  .checklist-item:last-child { margin-bottom: 0; }
-  .check-icon { color: var(--success-text); flex-shrink: 0; font-weight: 600; }
-  .checklist-item p { margin: 0; font-size: 14px; }
-
-  .final-cta { background: var(--bg); border: 2px solid var(--info-border); border-radius: var(--radius-lg); padding: 22px; margin: 36px 0 16px; text-align: center; }
-  .final-cta h3 { margin: 0 0 8px; font-size: 17px; }
-  .final-cta p { font-size: 14px; margin: 0 0 16px; }
-  .cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .cta-btn { font-size: 14px; font-weight: 500; text-decoration: none; padding: 10px 22px; border-radius: var(--radius);
-    background: var(--info-border); color: #fff; transition: opacity 0.15s, transform 0.05s; display: inline-block; }
-  .cta-btn:hover { opacity: 0.9; }
-  .cta-btn:active { transform: scale(0.98); }
-  .cta-btn.outline { background: transparent; color: var(--info-text); border: 1px solid var(--info-border); }
-
-  .related { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 16px 18px; margin: 24px 0; }
-  .related .rel-label { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
-  .related a { font-size: 14px; color: var(--info-text); text-decoration: none; font-weight: 500; }
-  .related a:hover { text-decoration: underline; }
-
-  .disclaimer { background: var(--warning-bg); border-radius: var(--radius); padding: 14px 16px; margin-top: 28px; }
-  .disclaimer p { font-size: 12px; line-height: 1.7; color: var(--warning-text); margin: 0; }
-
-  footer { margin-top: 32px; padding-top: 16px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-tertiary); }
-  footer a { text-decoration: none; }
-</style>
 <!-- SEO_INJECT -->
   <link rel="canonical" href="https://SITE_URL/guide-timing.html">
   <meta name="robots" content="index, follow">
