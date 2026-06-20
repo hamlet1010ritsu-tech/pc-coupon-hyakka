@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【予算別】パソコンの選び方ガイド 2026 | 価格帯ごとのおすすめと失敗しない選び方 | PCクーポン百科</title>
+<meta name="description" content="5万円台から20万円超まで、予算別にパソコンの選び方を解説。各価格帯でできること・向いている人・おすすめメーカーを紹介します。クーポンを使えば1つ上の価格帯も狙えます。">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f6f5f1;
+    --bg-tertiary: #efede7;
+    --text: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #8a8980;
+    --border: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.22);
+    --info-bg: #e6f1fb;
+    --info-text: #0c447c;
+    --info-border: #378add;
+    --success-bg: #e1f5ee;
+    --success-text: #085041;
+    --warning-bg: #faeeda;
+    --warning-text: #633806;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1f1e1c;
+      --bg-secondary: #2a2926;
+      --bg-tertiary: #323128;
+      --text: #ededea;
+      --text-secondary: #b4b2a9;
+      --text-tertiary: #88877f;
+      --border: rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.26);
+      --info-bg: #0c447c;
+      --info-text: #b5d4f4;
+      --info-border: #378add;
+      --success-bg: #085041;
+      --success-text: #9fe1cb;
+      --warning-bg: #633806;
+      --warning-text: #fac775;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--sans); background: var(--bg-tertiary);
+    color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  a { color: inherit; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 0.5px solid var(--border); padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand-icon {
+    width: 36px; height: 36px; border-radius: var(--radius); background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .brand-name { font-size: 15px; font-weight: 500; }
+  .nav { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--text); }
+  .crumb { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+  .crumb a { text-decoration: none; }
+
+  h1 { font-size: 24px; font-weight: 500; margin: 0 0 10px; line-height: 1.45; }
+  .updated { font-size: 12px; color: var(--text-tertiary); margin: 0 0 20px; }
+  .lead { font-size: 15px; color: var(--text-secondary); margin: 0 0 24px; }
+
+  .toc {
+    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+    padding: 16px 20px; margin-bottom: 32px;
+  }
+  .toc-title { font-size: 13px; font-weight: 500; color: var(--text-tertiary); margin-bottom: 10px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { font-size: 14px; margin-bottom: 7px; }
+  .toc li:last-child { margin-bottom: 0; }
+  .toc a { text-decoration: none; color: var(--info-text); }
+  .toc a:hover { text-decoration: underline; }
+
+  h2 {
+    font-size: 19px; font-weight: 500; margin: 40px 0 14px; padding-top: 8px;
+    line-height: 1.4; scroll-margin-top: 16px;
+  }
+  h3 { font-size: 16px; font-weight: 500; margin: 24px 0 10px; }
+  p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; }
+  strong { color: var(--text); font-weight: 500; }
+
+  .price-card {
+    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .price-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; flex-wrap: wrap; }
+  .price-range { font-size: 20px; font-weight: 500; color: var(--text); }
+  .price-tag {
+    font-size: 11px; padding: 3px 10px; border-radius: var(--radius);
+    background: var(--info-bg); color: var(--info-text);
+  }
+  .price-for { font-size: 13px; color: var(--text-tertiary); margin: 0 0 14px; }
+
+  .spec-row { display: flex; gap: 12px; margin-bottom: 8px; }
+  .spec-label {
+    flex-shrink: 0; width: 92px; font-size: 12px; color: var(--text-tertiary);
+    padding-top: 1px;
+  }
+  .spec-val { font-size: 14px; color: var(--text-secondary); margin: 0; }
+
+  .can-do { background: var(--bg-secondary); border-radius: var(--radius); padding: 12px 16px; margin: 14px 0; }
+  .can-do p { font-size: 13px; margin: 0; line-height: 1.7; }
+  .can-do .cd-title { font-weight: 500; color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; }
+
+  .reco {
+    display: flex; align-items: center; gap: 12px; margin-top: 14px;
+    background: var(--success-bg); border-radius: var(--radius); padding: 12px 16px;
+    text-decoration: none; transition: opacity 0.15s;
+  }
+  .reco:hover { opacity: 0.85; }
+  .reco-icon { font-size: 18px; }
+  .reco-text { font-size: 13px; color: var(--success-text); line-height: 1.5; }
+  .reco-text strong { color: var(--success-text); font-weight: 600; }
+  .reco-arrow { margin-left: auto; font-size: 13px; color: var(--success-text); white-space: nowrap; font-weight: 500; }
+
+  .tip {
+    background: var(--info-bg); border-radius: var(--radius); padding: 16px 18px; margin: 28px 0;
+  }
+  .tip p { color: var(--info-text); margin: 0; font-size: 14px; line-height: 1.7; }
+  .tip strong { color: var(--info-text); }
+
+  .checklist { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin: 20px 0; }
+  .checklist-item { display: flex; gap: 10px; margin-bottom: 12px; }
+  .checklist-item:last-child { margin-bottom: 0; }
+  .check-icon { color: var(--success-text); flex-shrink: 0; font-weight: 600; }
+  .checklist-item p { margin: 0; font-size: 14px; }
+
+  .final-cta {
+    background: var(--bg); border: 2px solid var(--info-border); border-radius: var(--radius-lg);
+    padding: 22px; margin: 36px 0 16px; text-align: center;
+  }
+  .final-cta h3 { margin: 0 0 8px; font-size: 17px; }
+  .final-cta p { font-size: 14px; margin: 0 0 16px; }
+  .cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    font-size: 14px; font-weight: 500; text-decoration: none; padding: 10px 22px;
+    border-radius: var(--radius); background: var(--info-border); color: #fff;
+    transition: opacity 0.15s, transform 0.05s; display: inline-block;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-btn.outline { background: transparent; color: var(--info-text); border: 1px solid var(--info-border); }
+
+  .disclaimer { background: var(--warning-bg); border-radius: var(--radius); padding: 14px 16px; margin-top: 28px; }
+  .disclaimer p { font-size: 12px; line-height: 1.7; color: var(--warning-text); margin: 0; }
+
+  footer { margin-top: 32px; padding-top: 16px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-tertiary); }
+  footer a { text-decoration: none; }
+</style>
+<!-- SEO_INJECT -->
+  <link rel="canonical" href="https://SITE_URL/guide-budget.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PCクーポン百科">
+  <meta property="og:title" content="【予算別】パソコンの選び方ガイド 2026 | 価格帯ごとのおすすめと失敗しない選び方 | PCクーポン百科">
+  <meta property="og:description" content="5万円台から20万円超まで、予算別にパソコンの選び方を解説。各価格帯でできること・向いている人・おすすめメーカーを紹介します。クーポンを使えば1つ上の価格帯も狙えます。">
+  <meta property="og:url" content="https://SITE_URL/guide-budget.html">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="【予算別】パソコンの選び方ガイド 2026 | 価格帯ごとのおすすめと失敗しない選び方 | PCクーポン百科">
+  <meta name="twitter:description" content="5万円台から20万円超まで、予算別にパソコンの選び方を解説。各価格帯でできること・向いている人・おすすめメーカーを紹介します。クーポンを使えば1つ上の価格帯も狙えます。">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://SITE_URL/#organization",
+      "name": "PCクーポン百科",
+      "url": "https://SITE_URL/",
+      "description": "大手パソコンメーカーのクーポン・割引コードを毎日確認して掲載するサイト"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://SITE_URL/#website",
+      "url": "https://SITE_URL/",
+      "name": "PCクーポン百科",
+      "publisher": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://SITE_URL/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "選び方ガイド",
+          "item": "https://SITE_URL/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "予算別の選び方"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "【予算別】パソコンの選び方ガイド 2026 | 価格帯ごとのおすすめと失敗しない選び方 | PCクーポン百科",
+      "description": "5万円台から20万円超まで、予算別にパソコンの選び方を解説。各価格帯でできること・向いている人・おすすめメーカーを紹介します。クーポンを使えば1つ上の価格帯も狙えます。",
+      "inLanguage": "ja",
+      "datePublished": "2026-06-20",
+      "dateModified": "2026-06-20",
+      "author": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "publisher": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SITE_URL/guide-budget.html"
+      }
+    }
+  ]
+}
+</script>
+  <!-- SEO_INJECT -->
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <div class="brand-icon">💻</div>
+      <span class="brand-name">PCクーポン百科</span>
+    </a>
+    <nav class="nav">
+      <a href="lenovo-coupon.html">Lenovo</a><a href="hp-coupon.html">HP</a><a href="nec-coupon.html">NEC</a><a href="index.html">一覧</a>
+    </nav>
+  </div>
+
+  <div class="crumb"><a href="index.html">ホーム</a> / 選び方ガイド / 予算別の選び方</div>
+  <h1>【予算別】パソコンの選び方ガイド<br>価格帯ごとのおすすめと失敗しない選び方</h1>
+  <p class="updated">最終更新日：2026年6月20日</p>
+
+  <p class="lead">パソコン選びで最初に決めるべきは「予算」です。予算が決まれば、選べる性能とできることの範囲がほぼ決まります。この記事では5万円台から20万円超まで、価格帯ごとに「何ができるか」「どんな人に向くか」「どのメーカーが狙い目か」を整理しました。クーポンを使えば、ワンランク上の価格帯に手が届くこともあります。</p>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#budget1">5〜7万円台：ネット・動画・文書作成の入門機</a></li>
+      <li><a href="#budget2">8〜12万円台：毎日使うメイン機の標準ライン</a></li>
+      <li><a href="#budget3">13〜18万円台：快適さと携帯性を両立する上位機</a></li>
+      <li><a href="#budget4">20万円以上：クリエイティブ・ゲーミングの高性能機</a></li>
+      <li><a href="#checklist">予算が決まったら確認したい4つのポイント</a></li>
+    </ol>
+  </div>
+
+  <h2 id="budget1">5〜7万円台：ネット・動画・文書作成の入門機</h2>
+  <div class="price-card">
+    <div class="price-head">
+      <span class="price-range">5〜7万円台</span>
+      <span class="price-tag">入門・サブ機向け</span>
+    </div>
+    <p class="price-for">対象：はじめての1台 / 学生のレポート用 / 家族の共用機 / 2台目のサブ機</p>
+    <div class="spec-row"><span class="spec-label">CPU目安</span><p class="spec-val">Intel Core i3 / AMD Ryzen 3 クラス</p></div>
+    <div class="spec-row"><span class="spec-label">メモリ</span><p class="spec-val">8GB（最低ライン。これ未満は避けたい）</p></div>
+    <div class="spec-row"><span class="spec-label">ストレージ</span><p class="spec-val">SSD 256GB 以上</p></div>
+    <div class="can-do">
+      <p><span class="cd-title">この価格帯でできること</span>ネット検索、YouTube・動画視聴、メール、WordやExcelでの文書・表作成、オンライン会議。日常使いの大半はこなせます。一方、写真の重い編集、動画編集、最新ゲームには力不足です。</p>
+    </div>
+    <p>はじめてのパソコンや、用途が「ネットと書類中心」とはっきりしている人にはこの価格帯で十分です。ただしメモリ8GBは最低ラインなので、長く使うなら次の価格帯も検討する価値があります。</p>
+    <a class="reco" href="nec-coupon.html">
+      <span class="reco-icon" aria-hidden="true">🎟️</span>
+      <span class="reco-text"><strong>国産で安心して長く使いたいなら NEC（LAVIE）</strong><br>サポートが手厚く、入門機でも質感が高い</span>
+      <span class="reco-arrow">クーポンを見る →</span>
+    </a>
+  </div>
+
+  <h2 id="budget2">8〜12万円台：毎日使うメイン機の標準ライン</h2>
+  <div class="price-card">
+    <div class="price-head">
+      <span class="price-range">8〜12万円台</span>
+      <span class="price-tag">いちばん売れる価格帯</span>
+    </div>
+    <p class="price-for">対象：在宅ワークのメイン機 / 大学生の4年間使う1台 / 複数の作業を同時にこなしたい人</p>
+    <div class="spec-row"><span class="spec-label">CPU目安</span><p class="spec-val">Intel Core i5 / AMD Ryzen 5 クラス</p></div>
+    <div class="spec-row"><span class="spec-label">メモリ</span><p class="spec-val">16GB（長く快適に使うなら推奨）</p></div>
+    <div class="spec-row"><span class="spec-label">ストレージ</span><p class="spec-val">SSD 512GB 以上</p></div>
+    <div class="can-do">
+      <p><span class="cd-title">この価格帯でできること</span>上の入門機の用途に加え、タブを大量に開いた作業、軽めの写真編集、複数アプリの同時使用が快適にこなせます。最も売れ筋で、「迷ったらこの価格帯」と言える標準ラインです。</p>
+    </div>
+    <p>性能・価格・使い勝手のバランスが最も良い価格帯です。在宅ワークや学業のメイン機として長く使うなら、メモリ16GBを選んでおくと数年先まで快適さが続きます。</p>
+    <a class="reco" href="hp-coupon.html">
+      <span class="reco-icon" aria-hidden="true">🎟️</span>
+      <span class="reco-text"><strong>コスパとデザインのバランスなら HP</strong><br>クーポン・セールが豊富で、この価格帯の選択肢が広い</span>
+      <span class="reco-arrow">クーポンを見る →</span>
+    </a>
+  </div>
+
+  <div class="tip">
+    <p>💡 <strong>クーポンの賢い使いどころはここ。</strong>8〜12万円台は最もクーポンの恩恵が大きい価格帯です。たとえば本来13万円台のワンランク上のモデルが、クーポンで12万円を切れば、同じ予算で性能を底上げできます。「ひとつ上のモデルをクーポンで狙う」のが満足度を上げるコツです。</p>
+  </div>
+
+  <h2 id="budget3">13〜18万円台：快適さと携帯性を両立する上位機</h2>
+  <div class="price-card">
+    <div class="price-head">
+      <span class="price-range">13〜18万円台</span>
+      <span class="price-tag">上位・モバイル向け</span>
+    </div>
+    <p class="price-for">対象：軽くて持ち運びやすい1台が欲しい人 / 仕事で長時間使う人 / 画面の美しさにこだわる人</p>
+    <div class="spec-row"><span class="spec-label">CPU目安</span><p class="spec-val">Intel Core i5〜i7 / AMD Ryzen 5〜7 クラス</p></div>
+    <div class="spec-row"><span class="spec-label">メモリ</span><p class="spec-val">16GB 以上</p></div>
+    <div class="spec-row"><span class="spec-label">ストレージ</span><p class="spec-val">SSD 512GB〜1TB</p></div>
+    <div class="can-do">
+      <p><span class="cd-title">この価格帯でできること</span>標準ラインの快適さに加え、軽量・薄型ボディ、長いバッテリー駆動、高精細で色のきれいなディスプレイといった「質」が手に入ります。毎日持ち歩く人や、長時間画面を見る人ほど差を実感できます。</p>
+    </div>
+    <p>性能の数字だけでなく、重さ・バッテリー・画面の質という「使い心地」にお金をかける価格帯です。外回りや出張が多い人、カフェや図書館で作業する人に向いています。</p>
+    <a class="reco" href="lenovo-coupon.html">
+      <span class="reco-icon" aria-hidden="true">🎟️</span>
+      <span class="reco-text"><strong>仕事用の堅牢なモバイルなら Lenovo（ThinkPad）</strong><br>打ちやすいキーボードと堅牢性に定評。クーポンも毎週更新</span>
+      <span class="reco-arrow">クーポンを見る →</span>
+    </a>
+  </div>
+
+  <h2 id="budget4">20万円以上：クリエイティブ・ゲーミングの高性能機</h2>
+  <div class="price-card">
+    <div class="price-head">
+      <span class="price-range">20万円以上</span>
+      <span class="price-tag">高性能・専門用途</span>
+    </div>
+    <p class="price-for">対象：動画編集・3D制作をする人 / 最新ゲームを快適に遊びたい人 / 仕事で重い処理を扱う人</p>
+    <div class="spec-row"><span class="spec-label">CPU目安</span><p class="spec-val">Intel Core i7〜i9 / AMD Ryzen 7〜9 クラス</p></div>
+    <div class="spec-row"><span class="spec-label">メモリ</span><p class="spec-val">16GB〜32GB</p></div>
+    <div class="spec-row"><span class="spec-label">グラフィック</span><p class="spec-val">専用GPU（GeForce RTX 等）搭載</p></div>
+    <div class="can-do">
+      <p><span class="cd-title">この価格帯でできること</span>動画編集、3DCG、RAW現像、最新の3Dゲームなど、負荷の高い処理を快適にこなせます。専用グラフィックス（GPU）の有無がこの価格帯の分かれ目で、ゲームやクリエイティブ用途には必須です。</p>
+    </div>
+    <p>用途がはっきり高負荷（動画編集・ゲーム・3D）な人向けの価格帯です。逆に、用途がネットと書類中心ならこの性能は持て余すので、無理に背伸びする必要はありません。</p>
+    <a class="reco" href="lenovo-coupon.html">
+      <span class="reco-icon" aria-hidden="true">🎟️</span>
+      <span class="reco-text"><strong>ゲーミング・高性能機なら Lenovo（Legion / LOQ）</strong><br>高性能GPU搭載モデルが豊富で、クーポン対象になることも</span>
+      <span class="reco-arrow">クーポンを見る →</span>
+    </a>
+  </div>
+
+  <h2 id="checklist">予算が決まったら確認したい4つのポイント</h2>
+  <p>価格帯を絞ったら、最後に次の4点をチェックすると失敗しにくくなります。</p>
+  <div class="checklist">
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>メモリは8GB以上、長く使うなら16GB。</strong>メモリが少ないと、数年後に動作が重く感じる最大の原因になります。価格差は小さいので、迷ったら多い方を。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>ストレージはSSDを選ぶ。</strong>起動やアプリの立ち上がりの速さが段違いです。今はほとんどがSSDですが、念のため確認を。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>重さとバッテリーは持ち運ぶ人ほど重視。</strong>家でしか使わないなら気にしすぎなくてOK。毎日持ち歩くなら1.3kg以下が目安です。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>買う前にクーポンを必ず確認する。</strong>メーカー直販は時期によってクーポンが変わります。同じモデルでも、クーポンの有無で数千〜数万円変わることがあります。</p>
+    </div>
+  </div>
+
+  <div class="final-cta">
+    <h3>狙うメーカーが決まったら、クーポンをチェック</h3>
+    <p>当サイトは各メーカーのクーポンを毎日確認し、期限切れは即削除しています。購入前にのぞいてみてください。</p>
+    <div class="cta-buttons">
+      <a class="cta-btn" href="lenovo-coupon.html">Lenovo</a>
+      <a class="cta-btn" href="hp-coupon.html">HP</a>
+      <a class="cta-btn" href="nec-coupon.html">NEC</a>
+      <a class="cta-btn outline" href="index.html">クーポン一覧へ</a>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <p>⚠ 本記事の価格帯・スペック目安は2026年6月時点の一般的な傾向であり、製品やセール状況により変動します。掲載クーポンの有効性は保証されません。最新の価格・仕様・クーポン条件は必ず各メーカーの公式サイトでご確認ください。当サイトはアフィリエイトプログラムによる広告を含みます。</p>
+  </div>
+
+  <footer>
+    <a href="about.html">運営者情報</a> ・ <a href="contact.html">お問い合わせ</a> ・ <a href="privacy.html">プライバシーポリシー</a><br>
+    © 2026 PCクーポン百科. 当サイトはアフィリエイト広告（リンクシェア・ジャパン／バリューコマース等）を利用しています。
+  </footer>
+
+</div>
+</body>
+</html>
