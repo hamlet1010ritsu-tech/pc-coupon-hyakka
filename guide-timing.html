@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パソコンはいつ買うと安い？2026年のセール時期・買い時カレンダー | PCクーポン百科</title>
+<meta name="description" content="パソコンを安く買える時期を月別カレンダーで解説。決算期・ボーナス商戦・新生活セール・型落ちのタイミングまで、買い時を逃さないコツを紹介します。クーポン併用でさらにお得に。">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f6f5f1;
+    --bg-tertiary: #efede7;
+    --text: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #8a8980;
+    --border: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.22);
+    --info-bg: #e6f1fb;
+    --info-text: #0c447c;
+    --info-border: #378add;
+    --success-bg: #e1f5ee;
+    --success-text: #085041;
+    --warning-bg: #faeeda;
+    --warning-text: #633806;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1f1e1c;
+      --bg-secondary: #2a2926;
+      --bg-tertiary: #323128;
+      --text: #ededea;
+      --text-secondary: #b4b2a9;
+      --text-tertiary: #88877f;
+      --border: rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.26);
+      --info-bg: #0c447c;
+      --info-text: #b5d4f4;
+      --info-border: #378add;
+      --success-bg: #085041;
+      --success-text: #9fe1cb;
+      --warning-bg: #633806;
+      --warning-text: #fac775;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--sans); background: var(--bg-tertiary);
+    color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  a { color: inherit; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 0.5px solid var(--border); padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand-icon {
+    width: 36px; height: 36px; border-radius: var(--radius); background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .brand-name { font-size: 15px; font-weight: 500; }
+  .nav { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--text); }
+  .crumb { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+  .crumb a { text-decoration: none; }
+
+  h1 { font-size: 24px; font-weight: 500; margin: 0 0 10px; line-height: 1.45; }
+  .updated { font-size: 12px; color: var(--text-tertiary); margin: 0 0 20px; }
+  .lead { font-size: 15px; color: var(--text-secondary); margin: 0 0 24px; }
+
+  .toc {
+    background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+    padding: 16px 20px; margin-bottom: 32px;
+  }
+  .toc-title { font-size: 13px; font-weight: 500; color: var(--text-tertiary); margin-bottom: 10px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { font-size: 14px; margin-bottom: 7px; }
+  .toc li:last-child { margin-bottom: 0; }
+  .toc a { text-decoration: none; color: var(--info-text); }
+  .toc a:hover { text-decoration: underline; }
+
+  h2 { font-size: 19px; font-weight: 500; margin: 40px 0 14px; line-height: 1.4; scroll-margin-top: 16px; }
+  h3 { font-size: 16px; font-weight: 500; margin: 24px 0 10px; }
+  p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; }
+  strong { color: var(--text); font-weight: 500; }
+
+  .cal-table { width: 100%; border-collapse: collapse; background: var(--bg);
+    border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 8px 0 20px; }
+  .cal-table th, .cal-table td { text-align: left; padding: 11px 14px; font-size: 13px; border-bottom: 0.5px solid var(--border); vertical-align: top; }
+  .cal-table tr:last-child td { border-bottom: none; }
+  .cal-table th { background: var(--bg-secondary); font-weight: 500; color: var(--text); }
+  .cal-table .month { white-space: nowrap; font-weight: 500; color: var(--text); width: 76px; }
+  .cal-table td { color: var(--text-secondary); }
+  .level { font-size: 11px; padding: 2px 8px; border-radius: var(--radius); white-space: nowrap; }
+  .level.high { background: var(--success-bg); color: var(--success-text); }
+  .level.mid { background: var(--info-bg); color: var(--info-text); }
+  .level.low { background: var(--bg-secondary); color: var(--text-tertiary); }
+
+  .season-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 16px; }
+  .season-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .season-title { font-size: 17px; font-weight: 500; color: var(--text); }
+  .season-when { font-size: 12px; color: var(--info-text); background: var(--info-bg); padding: 3px 10px; border-radius: var(--radius); }
+
+  .tip { background: var(--info-bg); border-radius: var(--radius); padding: 16px 18px; margin: 28px 0; }
+  .tip p { color: var(--info-text); margin: 0; font-size: 14px; line-height: 1.7; }
+  .tip strong { color: var(--info-text); }
+
+  .reco { display: flex; align-items: center; gap: 12px; margin-top: 14px;
+    background: var(--success-bg); border-radius: var(--radius); padding: 12px 16px; text-decoration: none; transition: opacity 0.15s; }
+  .reco:hover { opacity: 0.85; }
+  .reco-icon { font-size: 18px; }
+  .reco-text { font-size: 13px; color: var(--success-text); line-height: 1.5; }
+  .reco-text strong { color: var(--success-text); font-weight: 600; }
+  .reco-arrow { margin-left: auto; font-size: 13px; color: var(--success-text); white-space: nowrap; font-weight: 500; }
+
+  .checklist { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin: 20px 0; }
+  .checklist-item { display: flex; gap: 10px; margin-bottom: 12px; }
+  .checklist-item:last-child { margin-bottom: 0; }
+  .check-icon { color: var(--success-text); flex-shrink: 0; font-weight: 600; }
+  .checklist-item p { margin: 0; font-size: 14px; }
+
+  .final-cta { background: var(--bg); border: 2px solid var(--info-border); border-radius: var(--radius-lg); padding: 22px; margin: 36px 0 16px; text-align: center; }
+  .final-cta h3 { margin: 0 0 8px; font-size: 17px; }
+  .final-cta p { font-size: 14px; margin: 0 0 16px; }
+  .cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn { font-size: 14px; font-weight: 500; text-decoration: none; padding: 10px 22px; border-radius: var(--radius);
+    background: var(--info-border); color: #fff; transition: opacity 0.15s, transform 0.05s; display: inline-block; }
+  .cta-btn:hover { opacity: 0.9; }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-btn.outline { background: transparent; color: var(--info-text); border: 1px solid var(--info-border); }
+
+  .related { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 16px 18px; margin: 24px 0; }
+  .related .rel-label { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+  .related a { font-size: 14px; color: var(--info-text); text-decoration: none; font-weight: 500; }
+  .related a:hover { text-decoration: underline; }
+
+  .disclaimer { background: var(--warning-bg); border-radius: var(--radius); padding: 14px 16px; margin-top: 28px; }
+  .disclaimer p { font-size: 12px; line-height: 1.7; color: var(--warning-text); margin: 0; }
+
+  footer { margin-top: 32px; padding-top: 16px; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-tertiary); }
+  footer a { text-decoration: none; }
+</style>
+<!-- SEO_INJECT -->
+  <link rel="canonical" href="https://SITE_URL/guide-timing.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PCクーポン百科">
+  <meta property="og:title" content="パソコンはいつ買うと安い？2026年のセール時期・買い時カレンダー | PCクーポン百科">
+  <meta property="og:description" content="パソコンを安く買える時期を月別カレンダーで解説。決算期・ボーナス商戦・新生活セール・型落ちのタイミングまで、買い時を逃さないコツを紹介します。クーポン併用でさらにお得に。">
+  <meta property="og:url" content="https://SITE_URL/guide-timing.html">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="パソコンはいつ買うと安い？2026年のセール時期・買い時カレンダー | PCクーポン百科">
+  <meta name="twitter:description" content="パソコンを安く買える時期を月別カレンダーで解説。決算期・ボーナス商戦・新生活セール・型落ちのタイミングまで、買い時を逃さないコツを紹介します。クーポン併用でさらにお得に。">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://SITE_URL/#organization",
+      "name": "PCクーポン百科",
+      "url": "https://SITE_URL/",
+      "description": "大手パソコンメーカーのクーポン・割引コードを毎日確認して掲載するサイト"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://SITE_URL/#website",
+      "url": "https://SITE_URL/",
+      "name": "PCクーポン百科",
+      "publisher": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://SITE_URL/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "選び方ガイド",
+          "item": "https://SITE_URL/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "買い時カレンダー"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "パソコンはいつ買うと安い？2026年のセール時期・買い時カレンダー | PCクーポン百科",
+      "description": "パソコンを安く買える時期を月別カレンダーで解説。決算期・ボーナス商戦・新生活セール・型落ちのタイミングまで、買い時を逃さないコツを紹介します。クーポン併用でさらにお得に。",
+      "inLanguage": "ja",
+      "datePublished": "2026-06-20",
+      "dateModified": "2026-06-20",
+      "author": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "publisher": {
+        "@id": "https://SITE_URL/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://SITE_URL/guide-timing.html"
+      }
+    }
+  ]
+}
+</script>
+  <!-- SEO_INJECT -->
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <div class="brand-icon">💻</div>
+      <span class="brand-name">PCクーポン百科</span>
+    </a>
+    <nav class="nav">
+      <a href="lenovo-coupon.html">Lenovo</a><a href="hp-coupon.html">HP</a><a href="nec-coupon.html">NEC</a><a href="index.html">一覧</a>
+    </nav>
+  </div>
+
+  <div class="crumb"><a href="index.html">ホーム</a> / 選び方ガイド / 買い時カレンダー</div>
+  <h1>パソコンはいつ買うと安い？<br>2026年のセール時期・買い時カレンダー</h1>
+  <p class="updated">最終更新日：2026年6月20日</p>
+
+  <p class="lead">パソコンは「買う時期」で価格が数千〜数万円変わります。決算期、ボーナス商戦、新生活セール、年末商戦、そして型落ちのタイミング——安く買えるパターンには規則性があります。この記事では年間の買い時を月別カレンダーで整理し、さらにクーポンを組み合わせて底値を狙うコツを紹介します。</p>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#calendar">年間 買い時カレンダー（月別の狙い目）</a></li>
+      <li><a href="#seasons">特に狙いたい4つのセール時期</a></li>
+      <li><a href="#model">型落ち（旧モデル）という穴場</a></li>
+      <li><a href="#coupon">セール×クーポンで底値を狙う</a></li>
+      <li><a href="#checklist">買う前のタイミング・チェックリスト</a></li>
+    </ol>
+  </div>
+
+  <h2 id="calendar">年間 買い時カレンダー（月別の狙い目）</h2>
+  <p>メーカー直販で安くなりやすい時期を月別にまとめました。「狙い目度」が高い月ほど、セールやクーポンが活発になる傾向があります。</p>
+  <table class="cal-table">
+    <tr><th>時期</th><th>狙い目度</th><th>主な理由・イベント</th></tr>
+    <tr><td class="month">1月</td><td><span class="level mid">中</span></td><td>初売り・新春セール。年始のキャンペーンが出やすい</td></tr>
+    <tr><td class="month">2〜3月</td><td><span class="level high">高</span></td><td>決算セール＋新生活セールが重なる。1年で最も活発な時期</td></tr>
+    <tr><td class="month">4月</td><td><span class="level mid">中</span></td><td>新生活セールの後半。新入学・新社会人向けが続く</td></tr>
+    <tr><td class="month">5月</td><td><span class="level low">低</span></td><td>大きなイベントが少なく、やや静かな時期</td></tr>
+    <tr><td class="month">6〜7月</td><td><span class="level high">高</span></td><td>夏のボーナス商戦。中間決算（一部メーカー）も</td></tr>
+    <tr><td class="month">8月</td><td><span class="level mid">中</span></td><td>夏セールの後半。お盆商戦</td></tr>
+    <tr><td class="month">9月</td><td><span class="level high">高</span></td><td>中間決算セール。新モデル発表で旧モデルが値下がり</td></tr>
+    <tr><td class="month">10〜11月</td><td><span class="level mid">中</span></td><td>秋の行楽・各種キャンペーン。年末商戦の入口</td></tr>
+    <tr><td class="month">12月</td><td><span class="level high">高</span></td><td>冬のボーナス商戦＋年末セール。1年の締めくくり</td></tr>
+  </table>
+  <p>大きく見ると、<strong>2〜3月・6〜7月・9月・12月</strong>の4つが特に狙い目です。次でそれぞれを詳しく見ていきます。</p>
+
+  <h2 id="seasons">特に狙いたい4つのセール時期</h2>
+
+  <div class="season-card">
+    <div class="season-head">
+      <span class="season-title">① 決算セール</span>
+      <span class="season-when">3月・9月が中心</span>
+    </div>
+    <p>多くの企業は3月と9月が決算期です。この時期はメーカーが販売目標達成のために値引きやクーポンを強化する傾向があり、1年の中でも有数の狙い目です。特に3月は新生活需要と重なるため、対象モデルも幅広くなります。</p>
+  </div>
+
+  <div class="season-card">
+    <div class="season-head">
+      <span class="season-title">② ボーナス商戦</span>
+      <span class="season-when">6〜7月・12月</span>
+    </div>
+    <p>夏と冬のボーナス時期は、各社が購買意欲に合わせてセールを打ちます。高単価モデルやゲーミングPCもこの時期に動きやすく、上位機を狙う人にとっては見逃せないタイミングです。</p>
+  </div>
+
+  <div class="season-card">
+    <div class="season-head">
+      <span class="season-title">③ 新生活セール</span>
+      <span class="season-when">2〜4月</span>
+    </div>
+    <p>進学・就職・転居が集中するこの時期は、学生・新社会人向けのモデルやキャンペーンが充実します。学割と組み合わせると割引幅が大きくなりやすく、はじめての1台を買う人に向いています。</p>
+  </div>
+
+  <div class="season-card">
+    <div class="season-head">
+      <span class="season-title">④ 年末セール</span>
+      <span class="season-when">11〜12月</span>
+    </div>
+    <p>年末商戦は冬のボーナスと重なり、年間を通して在庫やキャンペーンが動く時期です。新モデルへの切り替え前に旧モデルが値下がりすることもあり、型落ち狙いとも相性が良い時期です。</p>
+  </div>
+
+  <h2 id="model">型落ち（旧モデル）という穴場</h2>
+  <p>「最新モデルにこだわらない」なら、型落ち（1世代前のモデル）が最もコスパの良い選択肢です。新モデルが発表されると、性能がほとんど変わらない旧モデルが大きく値下がりすることがよくあります。</p>
+  <p>狙い目は<strong>新モデル発表の直後</strong>。日常使いが中心なら、1世代前でも体感差はほとんどありません。最新の性能が必要な用途（最新ゲーム・重い動画編集）でなければ、型落ちは積極的に検討する価値があります。</p>
+  <a class="reco" href="hp-coupon.html">
+    <span class="reco-icon" aria-hidden="true">🎟️</span>
+    <span class="reco-text"><strong>型落ち・セール品を探すなら HP</strong><br>週末セールやクーポンの種類が多く、値下がり品を見つけやすい</span>
+    <span class="reco-arrow">クーポンを見る →</span>
+  </a>
+
+  <h2 id="coupon">セール×クーポンで底値を狙う</h2>
+  <p>ここがこの記事のいちばん大事なポイントです。セール時期に買うだけでも安くなりますが、<strong>セール価格にさらにクーポンを重ねられる</strong>場合があります。これが底値を狙う最大のコツです。</p>
+  <div class="tip">
+    <p>💡 <strong>「セールを待つ」だけでは半分。</strong>メーカー直販は、セール中でもクーポンが別途配布されていることがあります。セールの値引きとクーポンの両方を効かせれば、店頭やセール単体より安くなることも。だから、買おうと思った時は必ずクーポンの有無を確認するのが鉄則です。</p>
+  </div>
+  <p>当サイトは各メーカーのクーポンを毎日チェックし、期限切れは即削除しています。セール時期に「今あるクーポン」をすぐ確認できるので、買い時とクーポンを同時に押さえられます。</p>
+  <a class="reco" href="lenovo-coupon.html">
+    <span class="reco-icon" aria-hidden="true">🎟️</span>
+    <span class="reco-text"><strong>クーポンが毎週更新される Lenovo</strong><br>eクーポンが頻繁に変わるので、セール時期は特に要チェック</span>
+    <span class="reco-arrow">クーポンを見る →</span>
+  </a>
+
+  <h2 id="checklist">買う前のタイミング・チェックリスト</h2>
+  <p>「今が買い時かどうか」を判断するための4つのチェックです。</p>
+  <div class="checklist">
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>今は狙い目の時期か？</strong>急ぎでなければ、2〜3月・6〜7月・9月・12月のセール時期まで待つと有利です。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>最新モデルが本当に必要か？</strong>日常使いなら型落ちで十分。新モデル発表直後は旧モデルが狙い目です。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>使えるクーポンがあるか？</strong>セール価格にクーポンを重ねられないか、買う直前に必ず確認しましょう。</p>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon" aria-hidden="true">✓</span>
+      <p><strong>今すぐ必要なら待たない。</strong>仕事や学業で今日必要なら、無理に時期を待つより、今あるクーポンで少しでも安くするのが正解です。</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="rel-label">あわせて読みたい</div>
+    <a href="guide-budget.html">→ 【予算別】パソコンの選び方ガイド｜価格帯ごとのおすすめ</a>
+  </div>
+
+  <div class="final-cta">
+    <h3>買い時が来たら、クーポンをチェック</h3>
+    <p>セール時期でも、クーポンを重ねればさらに安くなることがあります。購入前にのぞいてみてください。</p>
+    <div class="cta-buttons">
+      <a class="cta-btn" href="lenovo-coupon.html">Lenovo</a>
+      <a class="cta-btn" href="hp-coupon.html">HP</a>
+      <a class="cta-btn" href="nec-coupon.html">NEC</a>
+      <a class="cta-btn outline" href="index.html">クーポン一覧へ</a>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <p>⚠ 本記事のセール時期・狙い目は2026年6月時点の一般的な傾向であり、実際のセール内容・時期はメーカーや年により変動します。掲載クーポンの有効性は保証されません。最新の価格・セール・クーポン条件は必ず各メーカーの公式サイトでご確認ください。当サイトはアフィリエイトプログラムによる広告を含みます。</p>
+  </div>
+
+  <footer>
+    <a href="about.html">運営者情報</a> ・ <a href="contact.html">お問い合わせ</a> ・ <a href="privacy.html">プライバシーポリシー</a><br>
+    © 2026 PCクーポン百科. 当サイトはアフィリエイト広告（リンクシェア・ジャパン／バリューコマース等）を利用しています。
+  </footer>
+
+</div>
+</body>
+</html>
