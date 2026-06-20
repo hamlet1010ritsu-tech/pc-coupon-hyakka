@@ -689,3 +689,252 @@ footer a:hover {
   .code-row { flex-direction: column; }
   .use-btn { width: 100%; justify-content: center; }
 }
+
+/* ============================================================
+   装飾レイヤー — visual enhancement
+============================================================ */
+
+/* ── ブランド名グラデーション ──────────────────── */
+.brand-name {
+  background: linear-gradient(90deg, var(--blue) 0%, #0a7c4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand-name {
+    background: linear-gradient(90deg, #4b83f0 0%, #2ea86b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* ── ナビ active アンダーライン ────────────────── */
+.nav a {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 999px;
+}
+
+/* ── h2 見出し装飾 ──────────────────────────────── */
+h2 {
+  padding-left: 14px;
+  border-left: 3px solid var(--blue);
+  background: linear-gradient(90deg, var(--blue-bg) 0%, transparent 70%);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* ── 鮮度バッジ — 点滅する緑ドット ─────────────── */
+.freshness::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── 限定クーポンカード — グラデーション帯 ─────── */
+.coupon.featured {
+  border-left: none;
+  padding-left: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon.featured::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 50%, #0a7c4a 100%);
+}
+
+/* ── コードボックス — ハサミ装飾 ───────────────── */
+.code-box {
+  position: relative;
+}
+
+.code-box::before {
+  content: "✂";
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 13px;
+  color: var(--blue);
+  background: var(--bg-2);
+  line-height: 1;
+  padding: 2px 0;
+}
+
+/* ── コピーボタン — アイコン追加 ───────────────── */
+.copy-btn::before {
+  content: "⧉ ";
+  font-size: 11px;
+}
+
+/* ── メーカーカード — ホバーアニメーション ──────── */
+.maker-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.maker-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--green) 100%);
+  transition: width 0.25s ease;
+}
+
+.maker-card:hover::after { width: 100%; }
+
+/* ── CTAボタン — 影と矢印 ──────────────────────── */
+.cta-btn {
+  box-shadow: 0 2px 8px rgba(26, 86, 219, 0.30);
+  letter-spacing: 0.01em;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 4px 14px rgba(26, 86, 219, 0.40);
+  transform: translateY(-1px);
+}
+
+.cta-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 1px 4px rgba(26, 86, 219, 0.20);
+}
+
+.cta-btn.outline {
+  box-shadow: none;
+}
+
+.cta-btn.outline:hover {
+  background: var(--blue-bg);
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+/* ── 「公式サイトで使う」ボタン — 影 ────────────── */
+.use-btn {
+  box-shadow: 0 2px 6px rgba(26, 86, 219, 0.25);
+  letter-spacing: 0.01em;
+}
+
+.use-btn:hover {
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ── カードの入場アニメーション ─────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .coupon, .maker-card, .guide-card, .faq-item {
+    animation: fade-up 0.35s ease both;
+  }
+
+  .coupon:nth-child(1), .maker-card:nth-child(1), .faq-item:nth-child(1) { animation-delay: 0.05s; }
+  .coupon:nth-child(2), .maker-card:nth-child(2), .faq-item:nth-child(2) { animation-delay: 0.10s; }
+  .coupon:nth-child(3), .maker-card:nth-child(3), .faq-item:nth-child(3) { animation-delay: 0.15s; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ── 「当サイト限定」バッジ — 強調 ──────────────── */
+.badge-info {
+  background: linear-gradient(90deg, #1a56db, #0ea5e9);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ── stepの数字装飾 ─────────────────────────────── */
+.step {
+  position: relative;
+}
+
+.step-num {
+  display: inline-block;
+  background: var(--blue-bg);
+  border-radius: var(--r);
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+
+/* ── historyの終了ラベル ─────────────────────────── */
+.ended {
+  border: 1px solid var(--border-2);
+}
+
+/* ── recoカード — ホバー ────────────────────────── */
+.reco {
+  border: 1px solid var(--green-bg);
+  transition: transform 0.12s, box-shadow 0.12s, opacity 0.12s;
+}
+
+.reco:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 1;
+}
+
+/* ── final-cta — グラデーションボーダー ─────────── */
+.final-cta {
+  border: none;
+  position: relative;
+  background: var(--bg);
+}
+
+.final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--r-lg) + 2px);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--blue) 0%, #0ea5e9 50%, var(--green) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ── 免責テキスト — アイコン ─────────────────────── */
+.disclaimer p::before {
+  content: "⚠ ";
+}
+
+/* ── フッター — 上部にアクセントライン ──────────── */
+footer {
+  background: linear-gradient(to bottom, var(--bg-2), transparent);
+  padding: 16px 16px 0;
+  border-top: none;
+  margin-top: 40px;
+}
+
+/* ── テーブル — hover highlight ─────────────────── */
+.cal-table tr:hover td {
+  background: var(--blue-bg);
+  transition: background 0.15s;
+}
